@@ -37,3 +37,17 @@ body {
     vertical-align: middle;
     position: fixed;
 }
+
+#pumpkin-wrapper {
+    position:relative;
+    top: 25%;
+}
+
+#main-pumpkin {
+    cursor: pointer; cursor: hand;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    left: 25%;
+    position: relative;
+}
