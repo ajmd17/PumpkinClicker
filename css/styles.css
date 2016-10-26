@@ -50,6 +50,20 @@ body {
     position: absolute;
     width: 33%;
     height: 100%;
+    background-color: rgba(128, 128, 128, 0.8);
+    font-family: sans-serif;
+}
+
+.content-header {
+    width: 100%;
+    height: 48px;
+    background-color: rgb(40, 40, 40);
+    color: white;
+    line-height: 48px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .topnav {
@@ -67,6 +81,11 @@ body {
     text-align: center;
     vertical-align: middle;
     position: fixed;
+}
+
+#pumpkin-panel {
+border-left: 1px solid rgb(128, 128, 128);
+border-right: 1px solid rgb(128, 128, 128);
 }
 
 #window-login {
@@ -103,4 +122,10 @@ body {
     margin: auto;
     left: 25%;
     position: relative;
+    transition: all 0.2s linear;
+}
+
+#main-pumpkin:hover {
+    width: 58%;
+    left: 21%;
 }
