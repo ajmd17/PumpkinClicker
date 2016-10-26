@@ -16,7 +16,6 @@
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
@@ -43,7 +42,7 @@ body {
     width: 100%;
     height: auto;
     position: absolute;
-        bottom: 0;
+    bottom: 0;
 }
 
 .content-col {
@@ -71,8 +70,25 @@ body {
 }
 
 #window-login {
-    position: absolute;;
-    margin-top: 48px;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -176px;
+    background-color: rgba(128, 128, 128, 0.8);
+    border-radius: 10px;
+    border: 1px solid rgb(128, 128, 128);
+}
+
+#window-login-content {
+    position: relative;
+}
+
+.login-btn {
+    position: relative;
+    left: 86px;
 }
 
 #pumpkin-wrapper {
