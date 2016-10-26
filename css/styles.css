@@ -24,6 +24,35 @@
 .button-fb {background-color: #008CBA;}
 .button-google {background-color: #f44336;}
 
+#store-items {
+    list-style-type: none;
+    padding: 8px;
+}
+
+.store-item {
+    width: 100%;
+    height: 62px;
+    margin-bottom: 8px;
+    border: 1px solid rgb(70, 70, 70);
+    border-radius: 8px;
+    background-color: rgb(128, 128, 128);
+    cursor: pointer; cursor: hand;
+}
+
+.store-item img {
+    height: 58px;
+    width: 58px;
+    float: left;
+    margin: 2px;
+}
+
+.store-item .item-name {
+    font-weight: bold;
+}
+.store-item .item-desc {
+
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -45,10 +74,17 @@ body {
     bottom: 0;
 }
 
+.blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(4px);
+}
+
 .content-col {
     margin-top: 48px;
     position: absolute;
-    width: 33%;
+    width: 34%;
     height: 100%;
     background-color: rgba(128, 128, 128, 0.8);
     font-family: sans-serif;
@@ -84,8 +120,7 @@ body {
 }
 
 #pumpkin-panel {
-border-left: 1px solid rgb(128, 128, 128);
-border-right: 1px solid rgb(128, 128, 128);
+    background-color: rgba(128, 128, 128, 0.0);
 }
 
 #window-login {
@@ -112,7 +147,7 @@ border-right: 1px solid rgb(128, 128, 128);
 
 #pumpkin-wrapper {
     position:relative;
-    top: 25%;
+    margin-top: 48px;
 }
 
 #main-pumpkin {

@@ -62,8 +62,6 @@ $(document).ready(function() {
 					}
 				}
 
-                // TODO: load user variables (total pumpkins, pumpkins per click, etc)
-
 			});
 		}, function(error) {
 			console.log("Oops! There was an error");
