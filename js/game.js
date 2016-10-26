@@ -20,6 +20,7 @@ function setTotalPumpkins(newTotal) {
     loggedUser.totalPumpkins = newTotal;
     console.log("loggedUser.totalPumpkins set to: " + JSON.stringify(loggedUser.totalPumpkins).toString());
     // TODO: update data in firebase
+    profileRef.child(loggedUser.id).update(loggedUser);
 }
 
 function setPumpkinsPerClick(newAmount) {

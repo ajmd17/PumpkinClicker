@@ -9,9 +9,41 @@
 
 }
 
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-fb {background-color: #008CBA;}
+.button-google {background-color: #f44336;}
+
 body {
     padding: 0;
     margin: 0;
+    height: 100%;
+
+}
+
+#bg-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+#bg-img img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+        bottom: 0;
 }
 
 .content-col {
@@ -36,6 +68,11 @@ body {
     text-align: center;
     vertical-align: middle;
     position: fixed;
+}
+
+#window-login {
+    position: absolute;;
+    margin-top: 48px;
 }
 
 #pumpkin-wrapper {

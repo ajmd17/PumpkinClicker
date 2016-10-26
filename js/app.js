@@ -86,7 +86,7 @@ function addNewUser(result, ref) {
         // set loggedUser's score variables to default.
         totalPumpkins: 0,
         pumpkinsPerClick: 1,
-        pumpkinsPerSecond: 0,
+        pumpkinsPerSecond: 0
 	};
 
 	var newUser = ref.push(user);
