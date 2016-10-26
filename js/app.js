@@ -21,10 +21,6 @@ $(document).ready(function() {
     database = new firebase.database();
     profileRef = database.ref('/profiles');
 
-
-
-
-
 // BUTTONS
 
 	// event listener for the facebook login button
@@ -53,8 +49,7 @@ $(document).ready(function() {
 						// accessing objects:
 						// way 1: objectname.objectvalue
 						// way 2: objectname['objectvalue']
-						if (snapshotValue[keys[i]].email == result.user.email) {
-
+						if (snapshotValue[keys[i]].uid == result.user.uid) {
 							// found the profile, access it
 							loggedUser = snapshotValue[keys[i]];
 							loggedUser.id = keys[i];
@@ -66,20 +61,17 @@ $(document).ready(function() {
 						loggedUser = addNewUser(result, profileRef);
 					}
 				}
-				loadtopics(conversationRef, database);
-				loadmyconversations(userconvsref);
+
+                // TODO: load user variables (total pumpkins, pumpkins per click, etc)
+
 			});
 		}, function(error) {
 			console.log("Oops! There was an error");
 			console.log(error);
 		});
 	});
-
-
-
-
 // the following end the document.ready
-})
+});
 
 
 
@@ -90,7 +82,11 @@ $(document).ready(function() {
 function addNewUser(result, ref) {
 	var user = {
 		name: result.user.displayName,
-		email: result.user.email
+		uid: result.user.uid,
+        // set loggedUser's score variables to default.
+        totalPumpkins: 0,
+        pumpkinsPerClick: 1,
+        pumpkinsPerSecond: 0,
 	};
 
 	var newUser = ref.push(user);
