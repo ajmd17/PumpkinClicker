@@ -69,7 +69,7 @@ function setupGame() {
 
 function setTotalPumpkins(newTotal) {
     loggedUser.totalPumpkins = newTotal;
-    $("#total-pumpkins").html(loggedUser.totalPumpkins.toString() + " Total Pumpkins");
+    $("#total-pumpkins").html(Math.floor(loggedUser.totalPumpkins).toString() + " Total Pumpkins");
     profileRef.child(loggedUser.id).update(loggedUser);
 }
 
