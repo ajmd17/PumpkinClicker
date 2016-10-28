@@ -1,0 +1,120 @@
+.clear {
+clear: both;
+}
+.confetti {
+z-index: 6;
+width: 60px;
+height: 60px;
+margin-top: -100px;
+-moz-border-radius: 30px;
+-webkit-border-radius: 30px;
+border-radius: 30px;
+position:relative;
+animation:confetti 6s;
+-webkit-animation:confetti 6s;
+animation-iteration-count: infinite;
+-moz-animation-iteration-count: infinite;
+-webkit-animation-iteration-count: infinite;
+-o-animation-iteration-count: infinite; /* Safari and Chrome */
+}
+@keyframes confetti
+{
+0% {top:0px;}
+100% {top:1500px;}
+}
+@-webkit-keyframes confetti /* Safari and Chrome */
+{
+0% {top:0px;}
+100% {top:1500px;}
+}
+.confetti1 .confetti12 {
+animation-delay:1s;
+-webkit-animation-delay:1s;
+}
+.confetti1 {
+margin-left: 5%;
+}
+.confetti2 {
+margin-left: 10%;
+}
+.confetti3, .confetti6, .confetti20 {
+animation-delay:1.5s;
+-webkit-animation-delay:1.5s;
+}
+.confetti3 {
+margin-left: 15%;
+}
+.confetti4 {
+margin-left: 20%;
+animation-delay:3s;
+-webkit-animation-delay:3s;
+}
+.confetti5 {
+margin-left: 22%;
+}
+.confetti6 {
+margin-left: 26%;
+}
+.confetti7, .confetti8 {
+animation-delay:4.5s;
+-webkit-animation-delay:4.5s;
+}
+.confetti17 {
+margin-left: 31%;
+}
+.confetti8 {
+margin-left: 35%;
+}
+.confetti9 {
+margin-left: 50%;
+}
+.confetti10, .confetti14, .confetti18 {
+animation-delay:2.5s;
+-webkit-animation-delay:2.5s;
+}
+.confetti10 {
+margin-left: 41%;
+}
+.confetti11 {
+margin-left: 44%;
+animation-delay:2s;
+-webkit-animation-delay:2s;
+}
+.confetti12 {
+margin-left: 77%;
+}
+.confetti13 {
+margin-left: 82%;
+animation-delay:4s;
+-webkit-animation-delay:4s;
+}
+.confetti14 {
+margin-left: 66%;
+}
+.confetti15 {
+margin-left: 71%;
+}
+.confetti16 {
+margin-left: 80%;
+animation-delay:4s;
+-webkit-animation-delay:4s;
+}
+.confetti17, .confetti21 {
+animation-delay:.5s;
+-webkit-animation-delay:.5s;
+}
+.confetti17 {
+margin-left: 41%;
+}
+.confetti18 {
+margin-left: 67%;
+}
+.confetti19 {
+margin-left: 72%;
+}
+.confetti20 {
+margin-left: 21%;
+}
+.confetti21 {
+margin-left: 57%;
+}
