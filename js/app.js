@@ -38,8 +38,9 @@ $(document).ready(function() {
 				// if no values present, just add the user
 				if (snapshotValue == undefined || snapshotValue == null) {
 					loggedUser = addNewUser(result, profileRef);
-				}
-				else {
+
+                    setupGame();
+				} else {
 					// iterate through the object, and determine if the
 					// profile is present
 					var keys = Object.keys(snapshotValue);
@@ -54,11 +55,15 @@ $(document).ready(function() {
 							loggedUser = snapshotValue[keys[i]];
 							loggedUser.id = keys[i];
 							found = true;
+
+                            setupGame();
 						}
 					}
 					// profile is not found, add a new one
 					if (!found) {
 						loggedUser = addNewUser(result, profileRef);
+
+                        setupGame();
 					}
 				}
 
@@ -84,8 +89,25 @@ function addNewUser(result, ref) {
         // set loggedUser's score variables to default.
         totalPumpkins: 0,
         pumpkinsPerClick: 1,
-        pumpkinsPerSecond: 0
+        pumpkinsPerSecond: 0,
+
+        storeItems: [
+            {
+                name: "Banana Rob",
+                imgUrl: "img/bananarob.jpg",
+                description: "Hire banana Rob to help harvest your pumpkins.",
+                price: 100
+            },
+            {
+                name: "Test item",
+                imgUrl: "img/pumpkin.png",
+                description: "This is a test item",
+                price: 20
+            },
+        ]
 	};
+
+    console.log(user.storeItems);
 
 	var newUser = ref.push(user);
 	user.id = newUser.key;
