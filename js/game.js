@@ -41,7 +41,7 @@ function setupGame() {
             .append("<br>")
             .append($("<span class=\"item-desc\">").append(item.description))
             .append("<br>")
-            .append($("<span class=\"price-tag\">").append("Price: " + item.price.toString() + " pumpkins"))
+            .append($("<span class=\"price-tag\">").append("Price: &#127875; " + item.price.toString()))
             .click(function() {
                 if (item.price <= loggedUser.totalPumpkins) {
                     // decrease the user's amount of pumpkins.
