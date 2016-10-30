@@ -160,6 +160,7 @@ body {
     background-color: #ff7742;
     box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.6);
     z-index: 5;
+    overflow: hidden;
 }
 
 #window-login {

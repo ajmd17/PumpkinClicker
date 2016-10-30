@@ -1,7 +1,21 @@
 const priceMultiplier = 1.20;
 var showMousePumpkin = false;
 
+function playSound(source){
+    var audio = document.createElement("audio");
+    audio.src = source;
+    audio.addEventListener("ended", function() {
+        if (document.hasChild(this)) {
+            document.removeChild(this);
+        }
+    }, false);
+    audio.play();
+}
+
 function setupGame() {
+
+    // set up pumpkin counter
+    setTotalPumpkins(loggedUser.totalPumpkins);
 
     $(document).mousemove(function(e) {
         $("#pumpkin-mouse").css({left:e.pageX, top:e.pageY});
@@ -13,6 +27,9 @@ function setupGame() {
         setTotalPumpkins(loggedUser.totalPumpkins + loggedUser.pumpkinsPerClick);
         $("#pumpkin-mouse-text").html("+ " + loggedUser.pumpkinsPerClick.toString());
         showMousePumpkin = true;
+
+        // play click sound.
+        playSound("sound/click.mp3");
     });
 
 
@@ -27,10 +44,16 @@ function setupGame() {
             .append($("<span class=\"price-tag\">").append("Price: " + item.price.toString() + " pumpkins"))
             .click(function() {
                 if (item.price <= loggedUser.totalPumpkins) {
+                    // decrease the user's amount of pumpkins.
                     let priceRounded = Math.round(item.price);
                     setTotalPumpkins(loggedUser.totalPumpkins - priceRounded);
                     $("#pumpkin-mouse-text").html("- " + priceRounded);
                     showMousePumpkin = true;
+
+                    // perform the upgrade.
+                    setPumpkinsPerSecond(loggedUser.pumpkinsPerSecond + item.pumpkinsPerSecUpgrade);
+                    setPumpkinsPerClick(loggedUser.pumpkinsPerClick + item.pumpkinsPerClickUpgrade);
+
                     // increase item price.
                     item.price *= priceMultiplier;
                     item.price = Math.round(item.price);
@@ -68,8 +91,15 @@ function setupGame() {
 }
 
 function setTotalPumpkins(newTotal) {
-    loggedUser.totalPumpkins = newTotal;
-    $("#total-pumpkins").html(Math.floor(loggedUser.totalPumpkins).toString() + " Total Pumpkins");
+    var totalFloored = Math.floor(newTotal);
+    loggedUser.totalPumpkins = totalFloored;
+    if (totalFloored == 0) {
+        $("#total-pumpkins").html("No Pumpkins");
+    } else if (totalFloored == 1) {
+        $("#total-pumpkins").html("1 Pumpkin");
+    } else {
+        $("#total-pumpkins").html(totalFloored.toString() + " Pumpkins");
+    }
     profileRef.child(loggedUser.id).update(loggedUser);
 }
 

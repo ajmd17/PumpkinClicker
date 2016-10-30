@@ -95,14 +95,18 @@ function addNewUser(result, ref) {
             {
                 name: "Banana Rob",
                 imgUrl: "img/bananarob.jpg",
-                description: "Hire banana Rob to help harvest your pumpkins.",
-                price: 100
+                description: "Hire banana Rob to help harvest your pumpkins. +1 pumpkin per second.",
+                price: 100,
+                pumpkinsPerSecUpgrade: 1,
+                pumpkinsPerClickUpgrade: 0,
             },
             {
                 name: "Test item",
                 imgUrl: "img/pumpkin.png",
                 description: "This is a test item",
-                price: 20
+                price: 20,
+                pumpkinsPerSecUpgrade: 0,
+                pumpkinsPerClickUpgrade: 0,
             },
         ]
 	};
