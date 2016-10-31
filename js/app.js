@@ -76,10 +76,6 @@ $(document).ready(function() {
 // the following end the document.ready
 });
 
-
-
-
-
 // function to add a new user
 // (this isn't in document ready because it doesn't need to be initialized)
 function addNewUser(result, ref) {
@@ -101,6 +97,15 @@ function addNewUser(result, ref) {
                 pumpkinsPerSecUpgrade: 1,
                 pumpkinsPerClickUpgrade: 0,
             },
+              {
+                name: "Dwarf Eric",
+                imgUrl: "img/Dwarf Eric.jpg",
+                description: "+1 pumpkins per click. ",
+                price: 250,
+                boughtCount: 0,
+                pumpkinsPerSecUpgrade: 0,
+                pumpkinsPerClickUpgrade: 1,
+            },
             {
                 name: "Banana Beard",
                 imgUrl: "img/bananabeard.jpg",
@@ -110,36 +115,29 @@ function addNewUser(result, ref) {
                 pumpkinsPerSecUpgrade: 1,
                 pumpkinsPerClickUpgrade: 1,
             },
-              {
-                name: "Dwarf Eric",
-                imgUrl: "img/Dwarf Eric.jpg",
-                description: "+1 pumpkins per click. ",
-                price: 1000,
-                boughtCount: 0,
-                pumpkinsPerSecUpgrade: 0,
-                pumpkinsPerClickUpgrade: 1,
-            },  {
+            {
                 name: "Pizza Matt",
                 imgUrl: "img/pizza_matt_100x100.jpg",
                 description: "+5 pumpkins per second. ",
-                price: 5000,
+                price: 2000,
                 boughtCount: 0,
                 pumpkinsPerSecUpgrade: 5,
                 pumpkinsPerClickUpgrade: 0,
-            },  {
+            },
+            {
                 name: "Heather the champ",
                 imgUrl: "img/heather_trophy.jpg",
                 description: "Win everything everytime. +5 pumpkins per second, +5 pumpkins per click. ",
-                price: 10000,
+                price: 5000,
                 boughtCount: 0,
                 pumpkinsPerSecUpgrade: 5,
                 pumpkinsPerClickUpgrade: 5,
             },
-              {
-                name: "Mike",
+            {
+                name: "Mike o' Lantern",
                 imgUrl: "img/pumpkin_mike.jpg",
                 description: "Clicking pumpkins like a boss. +10 pumpkins per click",
-                price: 50000,
+                price: 10000,
                 boughtCount: 0,
                 pumpkinsPerSecUpgrade: 0,
                 pumpkinsPerClickUpgrade: 10,

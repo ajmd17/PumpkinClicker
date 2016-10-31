@@ -59,14 +59,12 @@
     cursor: pointer;
     user-select: none;
 }
-
 .store-item-wrapper {
     width:auto;
     display:block;
     float:left;
     height:58px;
 }
-
 .store-item-wrapper img {
     height: 100%;
     float: left;
