@@ -5,7 +5,7 @@ function playSound(source){
     var audio = document.createElement("audio");
     audio.src = source;
     audio.addEventListener("ended", function() {
-        if (document.hasChild(this)) {
+        if (this.parentNode == document) {
             document.removeChild(this);
         }
     }, false);
@@ -36,8 +36,8 @@ function setupGame() {
     // set up store items
     for (var i = 0; i < loggedUser.storeItems.length; i++) {
         let item = loggedUser.storeItems[i];
-        $("#store-items").append($("<li class=\"store-item\">").append("<img src=\"" + item.imgUrl + "\">")
-            .append($("<span class=\"item-name\">").append(item.name))
+        $("#store-items").append(($("<li class=\"store-item\">").append($("<div class=\"store-item-wrapper\">").append("<img src=\"" + item.imgUrl + "\">"))
+            .append($("<span class=\"item-name\">").append(item.name + " (You have " +  item.boughtCount +")"))
             .append("<br>")
             .append($("<span class=\"item-desc\">").append(item.description))
             .append("<br>")
@@ -57,12 +57,14 @@ function setupGame() {
                     // increase item price.
                     item.price *= priceMultiplier;
                     item.price = Math.round(item.price);
-                    $(this).find(".price-tag").html("Price: " + item.price.toString() + " pumpkins");
+                    item.boughtCount++;
+                    $(this).find(".item-name").html(item.name + " (You have " +  item.boughtCount +")");
+                    $(this).find(".price-tag").html("Price: &#127875; " + item.price.toString());
                     profileRef.child(loggedUser.id).update(loggedUser);
                 } else {
                     alert("You do not have enough pumpkins to purchase this item");
                 }
-            }));
+            })));
     }
     $("#banana-rob").click(function() {
         setPumpkinsPerSecond(loggedUser.pumpkinsPerSecond + 1);
@@ -90,6 +92,50 @@ function setupGame() {
     }, 1000);
 }
 
+function updatePumpkinfetti(totalFloored) {
+    if (totalFloored == 0) {
+        $(".confetti").hide();
+    } else {
+        if (totalFloored >= 1 && totalFloored < 5) {
+            $(".confetti1").show();
+        }
+        if (totalFloored >= 5 && totalFloored < 10) {
+            $(".confetti2").show();
+            $(".confetti3").show();
+            $(".confetti4").show();
+        }
+        if (totalFloored >= 10 && totalFloored < 20) {
+            $(".confetti5").show();
+            $(".confetti6").show();
+            $(".confetti7").show();
+        }
+        if (totalFloored >= 20 && totalFloored < 30) {
+            $(".confetti8").show();
+            $(".confetti9").show();
+            $(".confetti10").show();
+        }
+        if (totalFloored >= 30 && totalFloored < 40) {
+            $(".confetti11").show();
+            $(".confetti12").show();
+            $(".confetti13").show();
+        }
+        if (totalFloored >= 40 && totalFloored < 50) {
+            $(".confetti14").show();
+            $(".confetti15").show();
+            $(".confetti16").show();
+        }
+        if (totalFloored >= 50 && totalFloored < 60) {
+            $(".confetti17").show();
+            $(".confetti18").show();
+            $(".confetti19").show();
+        }
+        if (totalFloored >= 60 && totalFloored < 70) {
+            $(".confetti20").show();
+            $(".confetti21").show();
+        }
+    }
+}
+
 function setTotalPumpkins(newTotal) {
     var totalFloored = Math.floor(newTotal);
     loggedUser.totalPumpkins = totalFloored;
@@ -100,6 +146,9 @@ function setTotalPumpkins(newTotal) {
     } else {
         $("#total-pumpkins").html(totalFloored.toString() + " Pumpkins");
     }
+
+    updatePumpkinfetti(totalFloored);
+
     profileRef.child(loggedUser.id).update(loggedUser);
 }
 
@@ -110,5 +159,8 @@ function setPumpkinsPerClick(newAmount) {
 
 function setPumpkinsPerSecond(newAmount) {
     loggedUser.pumpkinsPerSecond = newAmount;
+
+    $("#pumpkins-per-sec").html("(at " + newAmount.toString() + "&#127875;/s)");
+
     profileRef.child(loggedUser.id).update(loggedUser);
 }
