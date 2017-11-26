@@ -202,6 +202,7 @@ body {
     transition: all 0.4s ease-in-out;
     width: 50%;
     margin-top: 15%;
+    user-select: none;
 }
 
 #main-pumpkin:hover {
